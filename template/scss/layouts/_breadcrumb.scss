@@ -1,0 +1,92 @@
+.breadcrumb-white {
+    .breadcrumb-item {
+
+        &::before {
+            color: $color-white !important;
+        }
+
+        @include hover {
+            .breadcrumb-link {
+                color: $color-white;
+            }
+        }
+
+        .breadcrumb-link {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        &:last-child {
+            .breadcrumb-link {
+                color: $color-white;
+                opacity: 1;
+            }
+        }
+
+    }
+}
+
+.breadcrumb {
+    border-radius: 0.4rem;
+    padding: 1rem 0;    
+    &-list {
+        @include flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+
+    &-item {
+        position: relative;
+        @include flex;
+        align-items: center;
+
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            .breadcrumb-link {
+                color: $color-text;
+                pointer-events: none;
+                @include lc(1);
+                max-width: 30rem;
+                white-space: unset;
+                opacity: 1;
+            }
+
+            &::before {
+                color: $color-text;
+            }
+        }
+
+        &::before {
+            content: '\f111';
+            font-family: "Font Awesome 6 Pro";
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+            color: #9DA3AE;
+            font-size: 0.5rem;
+            font-weight: 900;
+            margin-top: 0.3rem;
+        }
+
+        .breadcrumb-link {
+            color: $color-text;
+            @include fz-12;
+            transition: 0.4s;
+            white-space: nowrap;    
+            opacity: 0.5;
+
+            @include hover {
+                color: $color-five;
+            }
+        }
+    }
+}

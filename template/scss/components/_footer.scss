@@ -1,0 +1,221 @@
+.footer {
+    position: relative;
+    overflow: hidden;
+    background-color: $color-pri;
+
+    @include max($mobile) {
+        padding-top: 2rem;
+    }
+
+    &-wr {}
+
+    &-row {}
+
+    &-item {
+        &:nth-child(1) {
+            width: calc(4/12*100%);
+            @include max(1000px) {
+                order: 4;
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            width: calc(3/12*100%);
+            @include max(1000px) {
+                width: calc(100% / 3);
+            }
+            @include max(580px) {
+                width: 50%;
+            }
+            @include max(350px) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(3) {
+            width: calc(2/12*100%);
+            @include max(1000px) {
+                width: calc(100% / 3);
+            }
+            @include max(580px) {
+                width: 50%;
+            }
+            @include max(350px) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(4) {
+            width: calc(3/12*100%);
+            @include max(1000px) {
+                width: calc(100% / 3);
+            }
+            @include max(580px) {
+                width: 100%;
+                order: 4;
+            }
+        }
+
+        .tt {
+            font-weight: 600;
+            color: $color-white;
+            margin-bottom: 2rem;
+            position: relative;
+            height: 4rem;
+            @include max(1000px) {
+                height: auto;
+            }
+        }
+        .inner {
+            &:not(:first-child) {
+                margin-top: 3rem;
+            }
+            &-tt {
+                color: $color-four;
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+    &-iframe {
+        overflow: hidden;
+        border-radius: 0.8rem;
+        width: 100%;
+        max-width: 28.2rem;
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    &-top {
+        padding: 8rem 0;
+
+        @include max($res-mobile) {
+            padding: 4rem 0;
+        }
+    }
+
+    &-cpr {
+        padding: 2.4rem 0;
+        border-top: 0.1rem solid rgba($color: #fff, $alpha: 0.08);
+        @include mid-flex;
+        &-text {
+            margin-right: 0.8rem;
+            color: $color-white;
+            @include fz-14;
+            opacity: 0.7;
+        }
+        &-row {
+            @include flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include max(650px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    &-logo {
+        width: calc(4/12*100%);
+
+        @include max(500px) {
+            margin-bottom: 1rem;
+        }
+
+        .custom-logo-link {
+            max-width: 21.2rem;
+            width: 100%;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        @include max(1024px) {}
+    }
+
+
+    // menu 
+    .menu {
+        &-list {}
+
+        &-item {
+            position: relative;
+
+            &:not(:first-child) {
+                margin-top: 1rem;
+            }
+        }
+
+        &-link {
+            color: $color-white;
+            transition: 0.4s;
+            @include fz-14;
+            display: block;
+
+            @include hover {
+                color: $color-four;
+            }
+        }
+    }
+
+    // address
+    .address {
+        &-item {
+            @include flex;
+            flex-direction: column;
+            &:not(:first-child) {
+                margin-top: 1.4rem;
+            }
+            .name {
+                @include flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                &-txt {
+                    color: $color-white;
+                    font-weight: 700;
+                }
+            }
+            .icon {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.8rem;
+                @include mid-flex;
+                flex-shrink: 0;
+                margin-top: -0.1rem;
+
+                img {
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+
+        &-desc {
+            color: $color-white;
+            @include fz-14;
+            @include flex;
+            flex-direction: column;
+        }
+
+        &-link {
+            color: $color-white;
+            @include fz-14;
+            transition: 0.4s;
+            word-break: break-word;
+
+            @include hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
